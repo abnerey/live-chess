@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Tile } from './tile/Tile';
 
 class App extends Component {
+
+  generateTiles(limit) {
+    const tiles = [];
+    for (let i = 0; i < limit; i++) {
+      tiles.push(<Tile />);
+    }
+    return tiles;
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        {this.generateTiles(8)}
       </div>
     );
   }
